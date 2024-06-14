@@ -1,4 +1,4 @@
-import 'package:belajar_statemanagement/view/module_page.dart';
+import 'package:belajar_statemanagement/view/pages/module_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -20,13 +20,13 @@ class _DoneModuleListState extends State<DoneModuleList> {
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(widget.doneModuleList[index]),
-            // trailing: IconButton(
-            //     onPressed: () {
-            //       setState(() {
-            //         // widget.doneModuleList.removeAt(index);
-            //       });
-            //     },
-            //     icon: Icon(Icons.delete)),
+            trailing: IconButton(
+                onPressed: () {
+                  setState(() {
+                    widget.doneModuleList.removeAt(index);
+                  });
+                },
+                icon: Icon(Icons.delete)),
           );
         },
         itemCount: widget.doneModuleList.length,

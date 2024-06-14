@@ -1,4 +1,4 @@
-import 'package:belajar_statemanagement/view/done_module_list.dart';
+import 'package:belajar_statemanagement/view/pages/done_module_list.dart';
 import 'package:belajar_statemanagement/view/widgets/module_list.dart';
 import 'package:flutter/material.dart';
 
