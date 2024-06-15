@@ -1,4 +1,6 @@
+import 'package:belajar_statemanagement/provider/done_module_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ModuleList extends StatefulWidget {
   final List<String> doneModuleList;
@@ -26,13 +28,16 @@ class _ModuleListState extends State<ModuleList> {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) {
-        return ModuleTile(
-          moduleName: _moduleList[index],
-          isDone: widget.doneModuleList.contains(_moduleList[index]),
-          onClick: () {
-            setState(() {
-              widget.doneModuleList.add(_moduleList[index]);
-            });
+        return Consumer<DoneModuleProvider>(
+          builder: (context, doneModuleList, widget) {
+            return ModuleTile(
+              moduleName: _moduleList[index],
+              isDone:
+                  doneModuleList.doneModuleList.contains(_moduleList[index]),
+              onClick: () {
+                doneModuleList.complete(_moduleList[index]);
+              },
+            );
           },
         );
       },
